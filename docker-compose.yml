@@ -15,7 +15,7 @@ services:
     build: images/php
     volumes:
       - ./risk-analyzer:/var/www/html
-    working_dir: /var/www/html/app/public
+    working_dir: /var/www/html/app/
     command: php-fpm
     ports:
       - "9000:9000"

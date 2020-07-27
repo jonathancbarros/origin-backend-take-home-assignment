@@ -30,7 +30,7 @@ class RiskAnalyzerApiTest extends TestCase
     {
         $this->json(
             'POST',
-            '/risk-analyzer',
+            '/api/risk-analyzer',
             $this->getRequestParams(35, 2, 0, 'married', [0, 1, 0], ['year' => 2018], ['ownership_status' => 'owned'])
         )->seeJsonEquals([
             'auto' => 'regular',
@@ -44,7 +44,7 @@ class RiskAnalyzerApiTest extends TestCase
     {
         $this->json(
             'POST',
-            '/risk-analyzer',
+            '/api/risk-analyzer',
             $this->getRequestParams(61, 2, 0, 'married', [0, 1, 0], null, null)
         )->seeJsonEquals([
             'auto' => 'ineligible',
@@ -60,13 +60,13 @@ class RiskAnalyzerApiTest extends TestCase
 
         $this->json(
             'POST',
-            '/risk-analyzer',
+            '/api/risk-analyzer',
             $requestParams
         )->seeStatusCode(422);
 
         $this->json(
             'POST',
-            '/risk-analyzer',
+            '/api/risk-analyzer',
             $requestParams
         )->seeJsonEquals([
             'risk_questions.1' => ['The risk_questions.1 field must be true or false.']
@@ -79,7 +79,7 @@ class RiskAnalyzerApiTest extends TestCase
 
         $this->json(
             'POST',
-            '/risk-analyzer',
+            '/api/risk-analyzer',
             $requestParams
         )->seeStatusCode(422);
     }
@@ -90,7 +90,7 @@ class RiskAnalyzerApiTest extends TestCase
 
         $this->json(
             'POST',
-            '/risk-analyzer',
+            '/api/risk-analyzer',
             $requestParams
         )->seeStatusCode(422);
 
@@ -102,7 +102,7 @@ class RiskAnalyzerApiTest extends TestCase
 
         $this->json(
             'POST',
-            '/risk-analyzer',
+            '/api/risk-analyzer',
             $requestParams
         )->seeStatusCode(422);
 

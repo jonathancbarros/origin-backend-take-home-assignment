@@ -11,8 +11,4 @@
 |
 */
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
-
-$router->post('risk-analyzer/', 'RiskAnalyzerController@index');
+$router->post('api/risk-analyzer/', 'RiskAnalyzerController@index');

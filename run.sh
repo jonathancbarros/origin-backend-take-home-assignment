@@ -3,8 +3,8 @@
 echo Uploading Application container
 docker-compose up --build -d
 
-echo Install dependencies
+echo Installing dependencies
 docker run --rm --interactive --tty -v $PWD/risk-analyzer:/app composer install
 
-echo Information of new containers
-docker ps
+echo Running Tests
+docker exec -it php /var/www/html/vendor/bin/phpunit /var/www/html/tests/

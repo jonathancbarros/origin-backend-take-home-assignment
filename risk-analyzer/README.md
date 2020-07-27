@@ -1,24 +1,31 @@
-# Lumen PHP Framework
+# Risk Analyzer API
 
-[![Build Status](https://travis-ci.org/laravel/lumen-framework.svg)](https://travis-ci.org/laravel/lumen-framework)
-[![Total Downloads](https://poser.pugx.org/laravel/lumen-framework/d/total.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![Latest Stable Version](https://poser.pugx.org/laravel/lumen-framework/v/stable.svg)](https://packagist.org/packages/laravel/lumen-framework)
-[![License](https://poser.pugx.org/laravel/lumen-framework/license.svg)](https://packagist.org/packages/laravel/lumen-framework)
+## Overview
 
-Laravel Lumen is a stunningly fast PHP micro-framework for building web applications with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Lumen attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as routing, database abstraction, queueing, and caching.
+This API is the implementation for the requirements described at [Origin Backend Take-Home Assignment](../README.md). 
+It was developed by using PHP, Lumen and Docker and it had simplicity and maintainability as its main idea.
 
-## Official Documentation
+## How to get it running
 
-Documentation for the framework can be found on the [Lumen website](https://lumen.laravel.com/docs).
+The only thing you need is the Docker installed in your machine. So in the root of the project, there is the file [run.sh](../run.sh) which contains the commands to get the project running, you may execute the file or the commands directly on the terminal.
 
-## Contributing
+Once the containers are up and running, the API is accessible at `localhost/`.
 
-Thank you for considering contributing to Lumen! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## How to send a request
 
-## Security Vulnerabilities
+The API only has one endpoint available `localhost/api/risk-analyzer` and it only accepts the method POST.
+You can use the given example:
 
-If you discover a security vulnerability within Lumen, please send an e-mail to Taylor Otwell at taylor@laravel.com. All security vulnerabilities will be promptly addressed.
+```JSON
+{
+  "age": 35,
+  "dependents": 2,
+  "house": {"ownership_status": "owned"},
+  "income": 0,
+  "marital_status": "married",
+  "risk_questions": [0, 1, 0],
+  "vehicle": {"year": 2018}
+}
+```
 
-## License
-
-The Lumen framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The parameters `vehicle` and `house` are optional.
