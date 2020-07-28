@@ -7,13 +7,13 @@ It was developed by using PHP, Lumen and Docker and it had simplicity and mainta
 
 ## How to get it running
 
-The only thing you need is the Docker installed in your machine. So in the root of the project, there is the file [run.sh](../run.sh) which contains the commands to get the project running, you may execute the file or the commands directly on the terminal.
+All you need is the Docker installed in your machine. In the root of the project, there is the file [run.sh](../run.sh) which contains the commands to get the project running, you may execute the file or the commands directly on the terminal.
 
 Once the containers are up and running, the API is accessible at `localhost/`.
 
 ## How to send a request
 
-The API only has one endpoint available `localhost/api/risk-analyzer` and it only accepts the method POST.
+The API has only one endpoint available `localhost/api/risk-analyzer` and it accepts the method POST.
 You can use the given example:
 
 ```JSON
